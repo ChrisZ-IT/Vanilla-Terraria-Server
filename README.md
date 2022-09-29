@@ -1,19 +1,17 @@
 # Vanilla-Terraria-Server
-<i>this is a work in progress as I learn docker. so please forgive my sloppyness
+<i>this is a work in progress as I learn docker. So please forgive my sloppyness
 
-I will eventually move this process over to tshock.
-
-Building a new docker image will download the current version the terraria-server.zip file from Terraria.org </i>
-
+Building a new docker image will download the latest version the terraria-server.zip file from Terraria.org </i>
 
 # Build command:
-docker build --tag Vanilla-Terraria --file Dockerfile .
+sudo docker build --tag terraria-vanilla --file Dockerfile .
 
 # Run container in interactive mode.
-docker run -it -p 7777:7777 --memory=2048m --mount type=volume,src=terraria,dst=/home/terraria/.local/share/Terraria --name="terraria" Vanilla-Terraria
+sudo docker run -it -p 7777:7777 --memory=2048m --mount type=volume,src=terraria,dst=/home/terraria/.local/share/Terraria --name="terraria" terraria-vanilla
 
-# you can restart this container if it is stopped
-docker start <container−id>
+# Restart this container if it is stopped
+sudo docker ps -a
+sudo docker start <container−id>
 
 # TODO:
 1. Better documentation.

@@ -9,7 +9,7 @@ wget $download_path/$zip_name -P /staging
 
 # extacts linux server files
 unzip /staging/$zip_name -d /staging && \
-mkdir /terraria && \
-cp -r /staging/*/Linux/* /terraria && \
-mv /terraria/System.dll /terraria/System.dll.old
+mkdir /terraria-sesrver && \
+cp -r /staging/*/Linux/* /terraria-sesrver && \
+mv /terraria-sesrver/System.dll /terraria-sesrver/System.dll.old
 rm -rf /staging

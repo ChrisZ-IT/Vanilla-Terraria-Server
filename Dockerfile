@@ -29,17 +29,17 @@ ARG TERRARIA_USER_NAME=terraria
 RUN adduser --system --group $TERRARIA_USER_NAME
 
 # Sets permissions on required TS server files
-RUN chown -R $TERRARIA_USER_NAME /terraria && \
+RUN chown -R $TERRARIA_USER_NAME /terraria-sesrver && \
     chown    $TERRARIA_USER_NAME /usr/local/bin/start.sh && \
-    chmod 700 /terraria/TerrariaServer.exe && \
-    chmod -R u+rw /terraria/ && \
+    chmod 500 /terraria-sesrver/TerrariaServer.exe && \
+    chmod -R u+rw /terraria-sesrver/ && \
     chmod 500 /usr/local/bin/start.sh
 
 # Allow for external data
-#VOLUME ["/terraria/world"]
+#VOLUME ["/terraria-sesrver/world"]
 
 #Set working directory to server
-WORKDIR /terraria
+WORKDIR /terraria-sesrver
 
 # Sets default user
 USER terraria
